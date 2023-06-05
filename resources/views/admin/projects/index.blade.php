@@ -2,7 +2,12 @@
 
 @section('content')
     <div class="table-responsive pt-3">
-        <h1>Projects</h1>
+        <div class="d-flex justify-content-between">
+            <h1>Projects</h1>
+            <a href="{{ route('admin.projects.create') }}" class="btn btn-dark align-self-center">
+                <i class="fa-solid fa-plus px-3"></i>New Project
+            </a>
+        </div>
         <table class="table table-striped table-hover table-borderless table-primary align-middle">
             <thead class="table-light">
                 <tr>
@@ -22,7 +27,11 @@
                         <td>{{ $project->title }}</td>
                         <td>{{ $project->description }}</td>
                         <td>{{ $project->creation_date }}</td>
-                        <td>VIEW/EDIT/DELETE</td>
+                        <td>
+                            <a href="{{ route('admin.projects.show', $project->id) }}">View</a>
+                            <a href="{{ route('admin.projects.edit', $project->id) }}">Edit</a>
+                            <a href="">Delete</a>
+                        </td>
                     </tr>
                 @empty
                     <tr class="table-primary">
