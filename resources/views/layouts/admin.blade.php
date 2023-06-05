@@ -23,8 +23,8 @@
 </head>
 
 <body>
-    <div id="app">
-        <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <div id="app" class="vh-100">
+        <nav class="navbar navbar-dark bg-dark flex-md-nowrap p-0 shadow">
             <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Company name</a>
             <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
                 data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
@@ -39,20 +39,21 @@
             </ul>
         </nav>
 
-        <div class="container-fluid">
-            <div class="row">
+        <div class="container-fluid h-100">
+            <div class="row h-100">
+
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link {{ Route::currentRouteName() == 'admin.dashboard' ? 'bg-primary' : '' }}"
+                                <a class="nav-link {{ Route::currentRouteName() == 'admin.dashboard' ? 'bg-dark text-light rounded' : '' }}"
                                     aria-current="page" href="{{ route('admin.dashboard') }}">
                                     <span data-feather="home"></span>
                                     {{ __('Dashboard') }}
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Route::currentRouteName() == 'admin.projects.index' ? 'bg-primary' : '' }}"
+                                <a class="nav-link {{ Route::currentRouteName() == 'admin.projects.index' ? 'bg-dark text-light rounded' : '' }}"
                                     href="{{ route('admin.projects.index') }}">
                                     <span data-feather="file"></span>
                                     {{ __('Projects') }}
@@ -66,6 +67,7 @@
                 <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
                     @yield('content')
                 </main>
+
             </div>
         </div>
     </div>
