@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin')->group(function (){
+Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function (){
     
     Route::get('/', [ProjectController::class. 'index'])->name('dashboard');
 }
