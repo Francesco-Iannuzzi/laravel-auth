@@ -45,15 +45,17 @@
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="{{ route('admin.dashboard') }}">
+                                <a class="nav-link {{ Route::currentRouteName() == 'admin.dashboard' ? 'bg-primary' : '' }}"
+                                    aria-current="page" href="{{ route('admin.dashboard') }}">
                                     <span data-feather="home"></span>
-                                    Dashboard
+                                    {{ __('Dashboard') }}
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link {{ Route::currentRouteName() == 'admin.projects.index' ? 'bg-primary' : '' }}"
+                                    href="{{ route('admin.projects.index') }}">
                                     <span data-feather="file"></span>
-                                    Projects
+                                    {{ __('Projects') }}
                                 </a>
                             </li>
                         </ul>
