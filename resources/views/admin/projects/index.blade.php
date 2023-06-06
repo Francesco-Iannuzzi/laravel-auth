@@ -12,10 +12,11 @@
             <thead class="table-light">
                 <tr>
                     <th>ID</th>
+                    <th>Cover</th>
                     <th>Made By</th>
                     <th>Title</th>
-                    <th>Description</th>
-                    <th>Date</th>
+                    <th>Link</th>
+                    <th>Code Link</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -23,14 +24,23 @@
                 @forelse ($projects as $project)
                     <tr class="table-light">
                         <td scope="row">{{ $project->id }}</td>
+                        <td><img height="100" src="{{ $project->cover }}" alt="{{ $project->title }}"></td>
                         <td>{{ $project->made_by }}</td>
                         <td>{{ $project->title }}</td>
-                        <td>{{ $project->description }}</td>
-                        <td>{{ $project->creation_date }}</td>
+                        <td>{{ $project->link }}</td>
+                        <td>{{ $project->code_link }}</td>
                         <td>
-                            <a href="{{ route('admin.projects.show', $project->id) }}">View</a>
-                            <a href="{{ route('admin.projects.edit', $project->id) }}">Edit</a>
-                            <a href="">Delete</a>
+                            <div class="d-flex gap-3 px-2">
+                                <a href="{{ route('admin.projects.show', $project->id) }}" class="text-dark">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                                <a href="{{ route('admin.projects.edit', $project->id) }}" class="text-dark">
+                                    <i class="fa-solid fa-pen"></i>
+                                </a>
+                                <a href="" class="text-danger">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </div>
                         </td>
                     </tr>
                 @empty
