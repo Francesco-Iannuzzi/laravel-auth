@@ -108,7 +108,7 @@
         @enderror
         {{-- form code_link --}}
 
-        <button type="submit" class="btn btn-primary w-100 mt-4 py-2 px-4">Add</button>
+        <button type="submit" class="btn btn-primary w-100 mt-4 py-2 px-4">Edit</button>
 
 
     </form>
