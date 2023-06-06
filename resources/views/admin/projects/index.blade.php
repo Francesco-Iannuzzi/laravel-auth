@@ -21,7 +21,7 @@
             </thead>
             <tbody class="table-group-divider">
                 @forelse ($projects as $project)
-                    <tr class="table-primary">
+                    <tr class="table-light">
                         <td scope="row">{{ $project->id }}</td>
                         <td>{{ $project->made_by }}</td>
                         <td>{{ $project->title }}</td>
