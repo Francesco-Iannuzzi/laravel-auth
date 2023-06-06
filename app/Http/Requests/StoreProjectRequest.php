@@ -26,8 +26,12 @@ class StoreProjectRequest extends FormRequest
         return [
             'title' => ['required', 'unique:projects', 'max:50'],
             'made_by' => ['required', 'max:100'],
-            'description' => ['nullable'],
-            'creation_date' => ['nullable']
+            'description' => ['nullable', 'max:255'],
+            'creation_date' => ['nullable'],
+            'cover' => ['nullable'],
+            'link' => ['nullable'],
+            'code_link' => ['nullable'],
+            'trace' => ['nullable', 'max:255'],
         ];
     }
 }

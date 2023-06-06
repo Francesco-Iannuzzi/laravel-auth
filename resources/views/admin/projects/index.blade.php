@@ -31,10 +31,10 @@
                         <td>{{ $project->code_link }}</td>
                         <td>
                             <div class="d-flex gap-3 px-2">
-                                <a href="{{ route('admin.projects.show', $project->id) }}" class="text-dark">
+                                <a href="{{ route('admin.projects.show', $project) }}" class="text-dark">
                                     <i class="fa-solid fa-eye"></i>
                                 </a>
-                                <a href="{{ route('admin.projects.edit', $project->id) }}" class="text-dark">
+                                <a href="{{ route('admin.projects.edit', $project->slug) }}" class="text-dark">
                                     <i class="fa-solid fa-pen"></i>
                                 </a>
                                 <a href="" class="text-danger">
